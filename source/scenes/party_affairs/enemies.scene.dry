@@ -20,7 +20,7 @@ In our media and campaign materials, who should we consider as our main opponent
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "anti-democratic parties"; dem_strength += 10; lib_strength += 5; indus_dissent += 5; new_middle_kpd -= 2; new_middle_nsdap -= 2; new_middle_dnvp -= 2; nsdap_relation -= 10; dnvp_relation -10;
+on-arrival: enemies = "anti-democratic parties"; dem_strength += 10; lib_strength += 5; indus_dissent += 5; nsdap_relation -= 10; dnvp_relation -10;
 
 Attacking the far right and left is popular among all but the right wing of our party, who would prefer to be fighting the socialist parties. This might also hamper our ability to connect with the NSDAP and DNVP in the future.
 
