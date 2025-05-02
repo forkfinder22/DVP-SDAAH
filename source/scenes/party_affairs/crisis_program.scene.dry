@@ -54,7 +54,7 @@ subtitle: Call for a limited program of job creation and public works
 unavailable-subtitle: The Liberal and Democratic factions are not strong enough.
 choose-if: historical_mode == 0 or (dem_strength + lib_strength >= indus_strength+nat_strength)
 on-arrival: lib_strength += 10; dem_dissent -= 5; indus_dissent += 10; moderate_plan_support += 1
-go-to: support_lib_progress if moderate_plan_support < 3; adopt_moderate if nationalization_support >= 3
+go-to: support_lib_progress if moderate_plan_support < 3; adopt_moderate if moderate_plan_support >= 3
 
 @support_lib_progress
 
