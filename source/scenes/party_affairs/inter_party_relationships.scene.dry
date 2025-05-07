@@ -29,14 +29,17 @@ go-to: spd_blutmai if blutmai = 1; spd_2 if blutmai = 0 and spd_relation <= 50; 
 
 @spd_blutmai
 on-arrival: spd_relation += 8*(1 - dissent); z_relation += 1; ddp_relation += 1
+
 The socialists have proven that they are allies of the liberal parties, after stopping the communist riots, even if we do not entirely like each other yet
 
 @spd_2
 on-arrival: spd_relation += 4*(1 - dissent); ddp_relation += 1
+
 We have made some progress with cooperating with the SPD, however they do not trust us yet. The DDP approves of us reaching out to the SPD.
 
 @spd_3
 on-arrival: spd_relation += 6*(1 - dissent); ddp_relation += 1
+
 We hae cultivated a strong relation ship with the SPD and look forward to further cooperation with them
 
 @center
