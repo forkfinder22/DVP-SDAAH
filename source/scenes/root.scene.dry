@@ -106,8 +106,8 @@ Q.kpd_relation = 3;
 Q.ddp_relation = 40;
 Q.spd_relation = 35;
 // DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 50;
-Q.NSDAP_relation = 40;
+Q.dnvP_relation = 50;
+Q.nsdaP_relation = 40;
 
 Q.kpd_leader = "Thälmann";
 // alternative is the Conciliators as party leader
