@@ -1,6 +1,6 @@
 title: Republican Funding
 new-page: true
-view-if: fund_timer = 0; republican_funding = 1
+view-if: fund_timer = 0 and republican_funding = 1
 on-arrival: fund_timer = 6; month_actions += 1
 frequency: 300
 is-card: true
