@@ -37,7 +37,7 @@ Meeting with the Pope popularizes us among catholics (or at least opens their ey
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; republican_funding = 1
+on-arrival: resources -= 1; republican_funding = 1; funds += 1
 
 The Republican Party is dominant in american politics, and willing to help us. They are willing to provide funding when we need it.
 
