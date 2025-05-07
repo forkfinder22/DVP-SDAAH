@@ -1,1 +1,35 @@
+title: Republican Funding
+new-page: true
+view-if: fund_timer = 0
+on-arrival: fund_timer = 6; month_actions += 1
+frequency: 300
+is-card: true
+card-image: img/poster_2.jpg
+tags: party_affairs
 
+= Fundraising
+
+The American Republican Party is willing to fund us, to help us gain prominence within germany
+
+- @thanks: accept their money
+- @save: refuse their money in return for mre money later
+- @no: we don't need their money
+
+@thanks
+subtitle: [+ funds +] resources gained.
+on-arrival: resources += funds;
+
+We maintain our current dues.
+
+@save
+subtitle: we will get [+ dues + 1 +] next time they fund us
+choose-if: funds <= 5
+on-arrival: funds += 1; indus_dissent -= 8;
+
+Our current members appreciate this, but no one decides to join a party because of the low dues.
+
+@no
+subtitle: we don't need their money
+on-arrival: nat_strength += 10; nat_dissent += 5
+
+We are strong, german party, we don't need ANY handouts
