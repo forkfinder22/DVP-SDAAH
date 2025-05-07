@@ -25,32 +25,26 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1;
-go-to: spd_blutmai if blutmai = 1; spd_2 if blutmai = 0 and spd_relation >= 50; spd_3 if blutmai = 1 and spd_relation >= 60
+go-to: spd_blutmai if blutmai = 1; spd_2 if blutmai = 0 and spd_relation <= 50; spd_3 if blutmai = 0 and spd_relation >= 50
 
 @spd_blutmai
-on-arrival: spd_relation += 6*(1 - dissent); z_relation += 1; ddp_relation += 1
+on-arrival: spd_relation += 8*(1 - dissent); z_relation += 1; ddp_relation += 1
 The socialists have proven that they are allies of the liberal parties, after stopping the communist riots, even if we do not entirely like each other yet
 
 @spd_2
+on-arrival: spd_relation += 4*(1 - dissent); ddp_relation += 1
+We have made some progress with cooperating with the SPD, however they do not trust us yet. The DDP approves of us reaching out to the SPD.
 
-We have made some progress with cooperating with the SPD, and we could become great allies, assuming they don't start cooperating with the communists
-
-@kpd_2
-on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 3; dvp_relation -= 3
-
-After the success of the coalition government with the KPD, they are much more amenable to us.
-
-@kpd_blutmai
-on-arrival: kpd_relation += 3*(1 - dissent); reformist_dissent += 1
-
-After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
+@spd_3
+on-arrival: spd_relation += 6*(1 - dissent); ddp_relation += 1
+We hae cultivated a strong relation ship with the SPD and look forward to further cooperation with them
 
 @center
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 2 if z_party_leader == "Joos"
-go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"
+go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if dvp_in_government = 1 and z_in_government = 1
 
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
@@ -62,40 +56,23 @@ on-arrival: z_relation += 8*(1 - dissent)
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
-@center_bruning
-on-arrival: z_relation += 5*(1 - dissent)
-
-The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
-
-@liberals
+@ddp
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
-go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribound if year > 1930
 
 The [+ ddp_name +] has been one of our closest allies through the course of the Republic.
 
-@dvp_stresemann
-on-arrival: dvp_relation += 8*(1 - dissent)
+@dnvp
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources
+on-arrival: resources -= 1; dnvP_relation += 5*(1 - dissent)
 
-Gustav Stresemann, the leader of the DVP is the best foreign policy leaders of the republic, and while he has previously expressed monarchist tendencies, he has been friendly towards us.
+The DNVP has been one of our closest allies politically, and it comes naturally to improve our relation with them
 
-@dvp_loss
-on-arrival: dvp_relation += 5*(1 - dissent)
-
-With the death of Gustav Stresemann, the DVP is much less likely to be accommodating of us. In addition, the liberal parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
-
-However, given the influence of the DVP among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
-
-@dvp_moribound
-on-arrival: dvp_relation += 5*(1 - dissent)
-
-The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
-
-However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
-
-@spd_alone
+@dvp_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
 
